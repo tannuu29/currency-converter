@@ -5,6 +5,7 @@ const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select")
 const msg = document.querySelector(".msg");
+const toggleBtn = document.getElementById('theme-toggle');
 
 // for(code in countryList){
 //     console.log(code, countryList[code]);
@@ -80,3 +81,18 @@ btn.addEventListener("click", (evt) => {
 window.addEventListener("load", () => {
     updateExchangeRate();
 })
+
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+    toggleBtn.textContent = '🔆';
+}
+
+// Toggle theme on click
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    toggleBtn.textContent = isDark ? '🔆' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});

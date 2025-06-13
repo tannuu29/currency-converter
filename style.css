@@ -12,6 +12,45 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#theme-toggle {
+  position: fixed;
+  top: 3rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
+  color: inherit;
+}
+
+body.dark-theme {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-theme .container {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+}
+
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme button {
+    background-color: #444;
+    color: #f0f0f0;
+    border-color: #666;
+}
+
+body.dark-theme .select-container {
+    border-color: #666;
+}
+
+body.dark-theme .dropdown i {
+    color: #ccc;
+}
+
+
 .container {
     background-color:#fff;
     padding: 2rem;
